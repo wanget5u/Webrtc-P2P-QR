@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+body
+{
+    font-family: "JetBrains Mono", serif;
+    color: whitesmoke;
+    background: linear-gradient(royalblue, deepskyblue) no-repeat fixed;
+}
+h1
+{
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+.wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+    box-sizing: border-box;
+    background: linear-gradient(royalblue, deepskyblue) no-repeat fixed;
+}
+.container
+{
+    background: linear-gradient(royalblue, deepskyblue) no-repeat fixed;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 40px 60px;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+}
+.video-container
+{
+    background: linear-gradient(whitesmoke, ghostwhite) no-repeat fixed;
+    border-radius: 16px;
+    border-color: whitesmoke;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 2px 8px #0001;
+    padding: 40px 60px;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    color: black;
+}
+.qr-container
+{
+    background: linear-gradient(whitesmoke, ghostwhite) no-repeat fixed;
+    border-radius: 16px;
+    border-color: whitesmoke;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 2px 8px #0001;
+    padding: 40px 60px;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    color: black;
+}
