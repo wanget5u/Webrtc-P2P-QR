@@ -17,7 +17,7 @@ function App()
     const [remoteSignal, setRemoteSignal] = useState("");
     const [hasRemoteSignal, setHasRemoteSignal] = useState(false);
     const [connected, setConnected] = useState(false);
-
+    const [remoteStream, setRemoteStream] = useState(null);
     const [copied, setCopied] = useState(false);
 
     useEffect(() =>
@@ -36,6 +36,12 @@ function App()
 
     useEffect(() =>
     {
+        if (remoteStream && otherUserVideo.current)
+        {otherUserVideo.current.srcObject = remoteStream;}
+    }, [remoteStream, connected]);
+
+    useEffect(() =>
+    {
         if (myVideo.current && stream)
         {myVideo.current.srcObject = stream;}
     }, [stream]);
@@ -51,8 +57,7 @@ function App()
 
             peer.on("stream", (remoteStream) =>
             {
-                if (otherUserVideo.current)
-                {otherUserVideo.current.srcObject = remoteStream;}
+                setRemoteStream(remoteStream);
             });
 
             peer.on("connect", () =>
@@ -156,6 +161,7 @@ function App()
             }
 
             setConnected(false);
+            setRemoteStream(null);
             setIsInitiator(null);
             setLocalSignal("");
             setRemoteSignal("");
@@ -276,6 +282,9 @@ function App()
                 </div>
 
                 <div className="controls">
+
+
+                    {connected ? "Connected" : "Not connected"} <br/>
 
                     <h5>Connection steps</h5>
 
